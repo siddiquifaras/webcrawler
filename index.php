@@ -12,6 +12,16 @@
         <button type="submit">Begin Crawling</button>
     </form>
     <?php
+    //requests url's and calls the crawlPage function and places them in an array
+     if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $url = $_POST["url"];
+        $urls = crawlPage($url);
+        $response = [
+            "urls" => $urls
+        ];
+        displayResults($response["urls"]);
+        exit;
+    }
     //function to crawl a url and return anchor tag content
     function crawlPage($url) {
         $html = file_get_contents($url);  // Get the HTML content of the page
