@@ -33,6 +33,19 @@
             return [];
         }
     }
+    //function to display all the urls appearing on a page
+    function displayResults($urls) {
+        echo "<h2>URLs found on the page:</h2>\n";
+        foreach ($urls as $url) {
+            echo "<a href=\"$url\">$url</a><br>\n";
+        }
+        echo "</div>\n";
+        echo "<script>\n";
+        echo "document.getElementById(\"urlInput\").value = \"" . htmlspecialchars($_POST["url"]) . "\";\n";
+        echo "</script>\n";
+        echo "</body>\n";
+        echo "</html>";
+    }
     ?>
 
 </body>
