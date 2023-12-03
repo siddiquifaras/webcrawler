@@ -4,7 +4,13 @@
     <title>Faras' Crawler</title>
 </head>
 <body>
-    <h1>Web Crawler</h1>
+    <h1>Faras' Web Crawler</h1>
+    <!--takes input url from user and crawls that-->
+    <form id="crawlForm" method="POST">
+        <label for="urlInput">Enter a vaid URL:</label>
+        <input type="text" id="urlInput" name="url" required>
+        <button type="submit">Begin Crawling</button>
+    </form>
     <?php
     //function to crawl a url and return anchor tag content
     function crawlPage($url) {
