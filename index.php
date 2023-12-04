@@ -51,7 +51,7 @@
             } else {
                 $filteredUrls = [];
                 foreach ($urls as $url) {
-                    $subUrls = crawlPage($url, $depth - 1); // Recursively crawl the URLs at the next depth level
+                    $subUrls = crawlPage($url, $depth - 1); // recursive crawl the URLs at the next depth level
                     if (!empty($subUrls)) {
                         $filteredUrls = array_merge($filteredUrls, $subUrls); // Merge the sub URLs into the main URL list
                     }
